@@ -1,6 +1,7 @@
 import 'package:final_project_flutter/screens/auth/forget_password_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../controllers/fb_auth_controller.dart';
 import 'register_screen.dart';
 
 class Login extends StatefulWidget {
@@ -13,8 +14,22 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
-  late String email;
-  late String pass;
+  late TextEditingController _emailTextController;
+  late TextEditingController _passwordTextController;
+
+  @override
+  void initState() {
+    _emailTextController = TextEditingController();
+    _passwordTextController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _emailTextController.dispose();
+    _passwordTextController.dispose();
+    super.dispose();
+  }
 
   // @override
   @override
@@ -42,13 +57,11 @@ class _LoginState extends State<Login> {
                       width: 250,
                     ),
                     TextFormField(
+                      controller: _emailTextController,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Enter an Email ';
                         }
-                      },
-                      onChanged: (value) {
-                        email = value;
                       },
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -65,15 +78,13 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 10),
                     TextFormField(
+                      controller: _passwordTextController,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Enter a Password ';
                         } else if (value.length < 8) {
                           return 'Enter a valid Password ';
                         }
-                      },
-                      onChanged: (value) {
-                        pass = value;
                       },
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -117,19 +128,8 @@ class _LoginState extends State<Login> {
                         color: Color(0XFFF19DBA),
                       ),
                       child: TextButton(
-                        onPressed: () {
-                          if (globalKey.currentState!.validate()) {
-                            // AuthHelper.authHelper
-                            //     .Login(email, pass)
-                            //     .then((value) => () {
-                            //           Navigator.push(
-                            //             context,
-                            //             MaterialPageRoute(
-                            //               builder: (context) => Home(),
-                            //             ),
-                            //           );
-                            //         });
-                          }
+                        onPressed: () async {
+                          await login();
                         },
                         style: TextButton.styleFrom(
                           shape: const StadiumBorder(),
@@ -181,5 +181,15 @@ class _LoginState extends State<Login> {
             )),
       ),
     );
+  }
+
+  Future<void> login() async {
+    bool status = await FbAuthController().signIn(
+        context: context,
+        email: _emailTextController.text,
+        password: _passwordTextController.text);
+    if (status) {
+      Navigator.pushReplacementNamed(context, '/home_screen');
+    }
   }
 }

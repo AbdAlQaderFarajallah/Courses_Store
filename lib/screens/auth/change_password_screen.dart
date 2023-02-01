@@ -1,4 +1,4 @@
-import 'package:final_project_flutter/screens/setting_screen.dart';
+import 'package:final_project_flutter/screens/app/setting_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChangePassword extends StatelessWidget {

@@ -1,6 +1,7 @@
-import 'package:final_project_flutter/screens/forget_password_screen.dart';
-import 'package:final_project_flutter/screens/register_screen.dart';
+import 'package:final_project_flutter/screens/auth/forget_password_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'register_screen.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -157,10 +158,11 @@ class _LoginState extends State<Login> {
                         TextButton(
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Register(),
-                                ));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Register(),
+                              ),
+                            );
                           },
                           child: const Text(
                             'Register Now',

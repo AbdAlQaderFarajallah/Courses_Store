@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screens/change_password_screen.dart';
+import '../screens/auth/change_password_screen.dart';
 
 class SettingsItem extends StatelessWidget {
   SettingsItem({required this.text, required this.iconName});

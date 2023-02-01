@@ -1,14 +1,13 @@
-import 'package:final_project_flutter/screens/add_course_screen.dart';
-import 'package:final_project_flutter/screens/cart_screen.dart';
-import 'package:final_project_flutter/screens/courses_screen.dart';
-import 'package:final_project_flutter/screens/home_screen.dart';
-import 'package:final_project_flutter/screens/login_screen.dart';
-import 'package:final_project_flutter/screens/my_profile_screen.dart';
-import 'package:final_project_flutter/screens/product_details_screen.dart';
-import 'package:final_project_flutter/screens/setting_screen.dart';
+import 'package:final_project_flutter/screens/app/add_course_screen.dart';
+import 'package:final_project_flutter/screens/app/home_screen.dart';
+import 'package:final_project_flutter/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/product_card.dart';
+import '../../widgets/product_card.dart';
+import 'cart_screen.dart';
+import 'courses_screen.dart';
+import 'my_profile_screen.dart';
+import 'setting_screen.dart';
 
 class Products extends StatelessWidget {
   const Products({Key? key}) : super(key: key);

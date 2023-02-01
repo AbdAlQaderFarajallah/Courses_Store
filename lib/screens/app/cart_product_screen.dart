@@ -1,6 +1,7 @@
-import 'package:final_project_flutter/screens/cart_screen.dart';
-import 'package:final_project_flutter/screens/product_details_screen.dart';
+import 'package:final_project_flutter/screens/app/product_details_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'cart_screen.dart';
 
 class CartProduct extends StatelessWidget {
   const CartProduct({Key? key}) : super(key: key);

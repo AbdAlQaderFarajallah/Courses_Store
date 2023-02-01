@@ -1,7 +1,8 @@
-import 'package:final_project_flutter/screens/cart_product_screen.dart';
-import 'package:final_project_flutter/screens/cart_screen.dart';
-import 'package:final_project_flutter/screens/products_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'cart_product_screen.dart';
+import 'cart_screen.dart';
+import 'products_screen.dart';
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({Key? key}) : super(key: key);

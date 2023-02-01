@@ -1,20 +1,20 @@
-import 'package:final_project_flutter/screens/add_course_screen.dart';
-import 'package:final_project_flutter/screens/cart_product_screen.dart';
-import 'package:final_project_flutter/screens/cart_screen.dart';
-import 'package:final_project_flutter/screens/change_password_screen.dart';
-import 'package:final_project_flutter/screens/course_details_screen.dart';
-import 'package:final_project_flutter/screens/courses_screen.dart';
-import 'package:final_project_flutter/screens/forget_password_screen.dart';
-import 'package:final_project_flutter/screens/home_screen.dart';
-import 'package:final_project_flutter/screens/my_profile_screen.dart';
-import 'package:final_project_flutter/screens/product_details_screen.dart';
-import 'package:final_project_flutter/screens/products_screen.dart';
-import 'package:final_project_flutter/screens/register_screen.dart';
-import 'package:final_project_flutter/screens/setting_screen.dart';
+import 'package:final_project_flutter/screens/app/add_course_screen.dart';
+import 'package:final_project_flutter/screens/app/cart_product_screen.dart';
+import 'package:final_project_flutter/screens/app/cart_screen.dart';
+import 'package:final_project_flutter/screens/app/course_details_screen.dart';
+import 'package:final_project_flutter/screens/app/courses_screen.dart';
+import 'package:final_project_flutter/screens/app/my_profile_screen.dart';
+import 'package:final_project_flutter/screens/app/product_details_screen.dart';
+import 'package:final_project_flutter/screens/app/products_screen.dart';
+import 'package:final_project_flutter/screens/app/setting_screen.dart';
+import 'package:final_project_flutter/screens/auth/register_screen.dart';
+import 'package:final_project_flutter/screens/auth/change_password_screen.dart';
+import 'package:final_project_flutter/screens/auth/forget_password_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
-import 'screens/login_screen.dart';
+import 'screens/app/home_screen.dart';
+import 'screens/auth/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ void main() async {
   );
   runApp(
     MaterialApp(
-      initialRoute: '/settings_screen',
+      initialRoute: '/register_screen',
       routes: {
         '/home_screen': (context) => const Home(),
         '/add_courses_screen': (context) => const AddCourses(),
@@ -44,36 +44,3 @@ void main() async {
     ),
   );
 }
-
-// class App extends StatelessWidget {
-//   const App({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Home();
-//     // return FutureBuilder(
-//     //   // future: Firebase.initializeApp(),
-//     //   builder: (context, snapshot) {
-//     //     // Check for errors
-//     //     if (snapshot.hasError) {
-//     //       return Scaffold(
-//     //         appBar: AppBar(
-//     //             title: const Text(
-//     //           'something wrong',
-//     //         )),
-//     //       );
-//     //     }
-//     //     // Once complete, show your application
-//     //     if (snapshot.connectionState == ConnectionState.done) {
-//     //       return const AddCourses();
-//     //     }
-//     //     // Otherwise, show something whilst waiting for initialization to complete
-//     //     return const Scaffold(
-//     //       body: Center(
-//     //         child: Text('loading'),
-//     //       ),
-//     //     );
-//     //   },
-//     // );
-//   }
-// }

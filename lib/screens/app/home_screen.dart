@@ -1,15 +1,8 @@
-import 'package:final_project_flutter/screens/add_course_screen.dart';
-import 'package:final_project_flutter/screens/cart_screen.dart';
-import 'package:final_project_flutter/screens/courses_screen.dart';
-import 'package:final_project_flutter/screens/login_screen.dart';
-import 'package:final_project_flutter/screens/my_profile_screen.dart';
-import 'package:final_project_flutter/screens/products_screen.dart';
-import 'package:final_project_flutter/screens/setting_screen.dart';
 import 'package:final_project_flutter/widgets/drawar_item.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/container_image_widget.dart';
-import '../widgets/container_small_image_widget.dart';
+import '../../widgets/container_image_widget.dart';
+import '../../widgets/container_small_image_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

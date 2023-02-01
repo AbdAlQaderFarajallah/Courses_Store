@@ -1,12 +1,13 @@
 import 'package:final_project_flutter/screens/add_course_screen.dart';
 import 'package:final_project_flutter/screens/cart_screen.dart';
-import 'package:final_project_flutter/screens/change_password_screen.dart';
 import 'package:final_project_flutter/screens/courses_screen.dart';
 import 'package:final_project_flutter/screens/home_screen.dart';
 import 'package:final_project_flutter/screens/login_screen.dart';
 import 'package:final_project_flutter/screens/my_profile_screen.dart';
 import 'package:final_project_flutter/screens/products_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/settings_item.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -222,58 +223,15 @@ class Settings extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
           children: [
-            Card(
-              elevation: 5,
-              child: ListTile(
-                leading: const Icon(
-                  (Icons.lock),
-                  color: Color(0xFFC68418),
-                ),
-                title: const Text(
-                  "   Change Password ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: Colors.black),
-                ),
-                trailing: const Padding(
-                  padding: EdgeInsets.only(right: 35),
-                  child: Icon((Icons.arrow_forward_ios), color: Colors.grey),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ChangePassword(),
-                    ),
-                  );
-                },
-              ),
-            ),
-            const Divider(),
-            const Card(
-              elevation: 5,
-              child: ListTile(
-                leading: Icon(
-                  (Icons.language),
-                  color: Color(0xFFC68418),
-                ),
-                title: Text(
-                  "   Language ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: Colors.black),
-                ),
-                trailing: Padding(
-                  padding: EdgeInsets.only(right: 35),
-                  child: Icon((Icons.arrow_forward_ios), color: Colors.grey),
-                ),
-              ),
-            ),
+            SettingsItem(text: 'Change Password', iconName: Icons.lock),
+            SettingsItem(text: 'Language', iconName: Icons.language),
+            SettingsItem(text: 'About Us', iconName: Icons.ad_units_sharp),
+            SettingsItem(text: 'Contact Us', iconName: Icons.phone),
+            SettingsItem(text: 'Privacy Policy', iconName: Icons.account_box),
+            SettingsItem(text: 'Terms & Conditions', iconName: Icons.newspaper),
           ],
         ),
       ),

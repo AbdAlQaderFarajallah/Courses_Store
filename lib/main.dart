@@ -17,7 +17,7 @@ import 'screens/login_screen.dart';
 void main() {
   runApp(
     MaterialApp(
-      initialRoute: '/cartProduct_screen',
+      initialRoute: '/settings_screen',
       routes: {
         '/home_screen': (context) => const Home(),
         '/add_courses_screen': (context) => const AddCourses(),

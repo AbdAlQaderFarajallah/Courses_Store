@@ -11,10 +11,16 @@ import 'package:final_project_flutter/screens/product_details_screen.dart';
 import 'package:final_project_flutter/screens/products_screen.dart';
 import 'package:final_project_flutter/screens/register_screen.dart';
 import 'package:final_project_flutter/screens/setting_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 import 'screens/login_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MaterialApp(
       initialRoute: '/settings_screen',

@@ -124,22 +124,7 @@ class _AddCoursesState extends State<AddCourses> with Helpers {
   }
 
   Future<void> process() async {
-    bool status = widget.course == null
-        ? await FbFireStoreController().create(course: course)
-        : await FbFireStoreController().update(course: course);
-
-    if (status) {
-      if (course != null) {
-        Navigator.pop(context);
-      } else {
-        clear();
-      }
-    }
-    showSnackBar(
-      context: context,
-      message: status ? 'Process success' : 'Process failed',
-      error: !status,
-    );
+    await FbFireStoreController().create(course: course);
   }
 
   Course get course {
@@ -148,11 +133,5 @@ class _AddCoursesState extends State<AddCourses> with Helpers {
     course.numberOfLessons = _numberOfLessonEditingController.text;
     course.teacherName = _teacherEditingController.text;
     return course;
-  }
-
-  void clear() {
-    _teacherEditingController.text = '';
-    _numberOfLessonEditingController.text = '';
-    _nameOfCourseEditingController.text = '';
   }
 }

@@ -1,5 +1,5 @@
 class Course {
-   late String id;
+  String? id;
 
   late String teacherName;
 

@@ -1,8 +1,29 @@
 import 'package:final_project_flutter/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
-class ForgetPassword extends StatelessWidget {
+import '../../controllers/fb_auth_controller.dart';
+
+class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);
+
+  @override
+  State<ForgetPassword> createState() => _ForgetPasswordState();
+}
+
+class _ForgetPasswordState extends State<ForgetPassword> {
+  late TextEditingController _emailTextController;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailTextController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _emailTextController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +85,7 @@ class ForgetPassword extends StatelessWidget {
                 height: 60,
                 width: 350,
                 child: TextField(
+                  controller: _emailTextController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(32.0),
@@ -90,8 +112,8 @@ class ForgetPassword extends StatelessWidget {
                   color: Color(0XFFF19DBA),
                 ),
                 child: TextButton(
-                  onPressed: () {
-                    // Navigator.push(context,MaterialPageRoute(builder: (context) =>  Home(),));
+                  onPressed: () async {
+                    await forgetPassword();
                   },
                   style: TextButton.styleFrom(
                     shape: const StadiumBorder(),
@@ -141,5 +163,13 @@ class ForgetPassword extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> forgetPassword() async {
+    bool status = await FbAuthController()
+        .forgetPassword(context: context, email: _emailTextController.text);
+    if (status) {
+      Navigator.pop(context);
+    }
   }
 }

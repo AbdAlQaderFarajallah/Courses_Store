@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 import 'screens/app/home_screen.dart';
 import 'screens/auth/login_screen.dart';
+import 'screens/launch_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +24,10 @@ void main() async {
   );
   runApp(
     MaterialApp(
-      initialRoute: '/register_screen',
+      initialRoute: '/launch_screen',
       routes: {
         '/home_screen': (context) => const Home(),
+        '/launch_screen': (context) => const LaunchScreen(),
         '/add_courses_screen': (context) => const AddCourses(),
         '/courses_screen': (context) => const Courses(),
         '/products_screen': (context) => const Products(),

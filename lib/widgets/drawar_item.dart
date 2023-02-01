@@ -29,7 +29,7 @@ class DrawarItem extends StatelessWidget {
             ),
           ),
           onTap: () {
-            Navigator.pushNamed(context, pageName);
+            Navigator.pushReplacementNamed(context, 'register_screen');
           },
         ),
       ],

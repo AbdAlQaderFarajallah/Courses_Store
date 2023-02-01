@@ -24,11 +24,12 @@ void main() async {
   );
   runApp(
     MaterialApp(
-      initialRoute: '/launch_screen',
+      initialRoute: '/add_courses_screen',
       routes: {
         '/home_screen': (context) => const Home(),
         '/launch_screen': (context) => const LaunchScreen(),
-        '/add_courses_screen': (context) => const AddCourses(),
+        '/add_courses_screen': (context) =>
+            AddCourses(name: '', course: '', teacher: ''),
         '/courses_screen': (context) => const Courses(),
         '/products_screen': (context) => const Products(),
         '/cart_screen': (context) => const Cart(),

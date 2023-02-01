@@ -77,11 +77,11 @@ class Cart extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   )),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AddCourses(),
-                    ));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => const AddCourses(),
+                //     ));
               },
             ),
             const Divider(),

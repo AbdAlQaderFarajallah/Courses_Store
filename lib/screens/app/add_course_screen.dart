@@ -5,15 +5,7 @@ import 'package:flutter/material.dart';
 import '../../controllers/fb_firestore_controller.dart';
 
 class AddCourses extends StatefulWidget {
-  AddCourses({
-    required this.name,
-    required this.teacher,
-    required this.course,
-  });
-
-  final String teacher;
-  final String course;
-  final String name;
+  AddCourses();
 
   @override
   State<AddCourses> createState() => _AddCoursesState();

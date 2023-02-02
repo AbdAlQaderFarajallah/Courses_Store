@@ -1,8 +1,8 @@
-import 'package:final_project_flutter/widgets/drawar_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/container_image_widget.dart';
 import '../../widgets/container_small_image_widget.dart';
+import '../../widgets/drawar_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -22,41 +22,7 @@ class Home extends StatelessWidget {
           onPressed: () {},
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: const EdgeInsets.all(15),
-          scrollDirection: Axis.vertical,
-          controller: ScrollController(),
-          shrinkWrap: true,
-          children: [
-            const SizedBox(height: 20),
-            const CircleAvatar(
-              radius: 80,
-              backgroundImage: AssetImage(
-                'assets/rachelle.jpg',
-              ),
-            ),
-            const SizedBox(height: 30),
-            const Center(
-                child: Text(
-              'Rachelle D.Michael',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            )),
-            DrawarItem(text: 'Home', pageName: 'home_screen', iconName:Icons.home ),
-            DrawarItem(text: 'Add Course', pageName: 'add_courses_screen', iconName:Icons.add_circle_outline_rounded ),
-            DrawarItem(text: 'Course', pageName: 'courses_screen', iconName:Icons.collections_bookmark ),
-            DrawarItem(text: 'News', pageName: 'home_screen', iconName:Icons.my_library_books ),
-            DrawarItem(text: 'Products', pageName: 'products_screen', iconName:Icons.shopping_bag ),
-            DrawarItem(text: 'Cart', pageName: 'cart_screen', iconName:Icons.shopping_cart ),
-            DrawarItem(text: 'My Profile', pageName: 'myProfile_screen', iconName:Icons.person_pin),
-            DrawarItem(text: 'Setting', pageName: 'settings_screen', iconName:Icons.settings ),
-            DrawarItem(text: 'Logout', pageName: 'register_screen', iconName:Icons.logout ),
-          ],
-        ),
-      ),
+      drawer: const DrawarWidget(),
       body: Column(
         children: [
 //********************************************************************************************************************

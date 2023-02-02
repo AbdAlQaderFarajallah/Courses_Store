@@ -35,4 +35,5 @@ class FbFireStoreController {
   Stream<QuerySnapshot> read() async* {
     yield* _firebaseFirestore.collection('Course').snapshots();
   }
+
 }

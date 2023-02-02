@@ -15,7 +15,6 @@ class _LaunchScreenState extends State<LaunchScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
       _streamSubscription = FbAuthController().checkUserState(

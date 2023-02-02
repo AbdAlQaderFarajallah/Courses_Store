@@ -28,8 +28,7 @@ void main() async {
       routes: {
         '/home_screen': (context) => const Home(),
         '/launch_screen': (context) => const LaunchScreen(),
-        '/add_courses_screen': (context) =>
-            AddCourses(name: '', course: '', teacher: ''),
+        '/add_courses_screen': (context) => AddCourses(),
         '/courses_screen': (context) => const Courses(),
         '/products_screen': (context) => const Products(),
         '/cart_screen': (context) => const Cart(),

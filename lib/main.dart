@@ -24,7 +24,7 @@ void main() async {
   );
   runApp(
     MaterialApp(
-      initialRoute: '/add_courses_screen',
+      initialRoute: '/courses_screen',
       routes: {
         '/home_screen': (context) => const Home(),
         '/launch_screen': (context) => const LaunchScreen(),
